@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1944177344423448775}
   - component: {fileID: 1944177344423448780}
   - component: {fileID: -5129508000144551243}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Karhu
   m_TagString: Untagged
   m_Icon: {fileID: 0}

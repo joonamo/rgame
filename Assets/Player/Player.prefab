@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -7342553534013840527}
   - component: {fileID: 2238127972300274978}
   - component: {fileID: 8229112357261731496}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -149,5 +149,3 @@ MonoBehaviour:
   decel: 400
   angularAccel: 5
   lastInput: {x: 0, y: 0, z: 0}
-  karhu: {fileID: 0}
-  repulsiveObj: {fileID: 0}

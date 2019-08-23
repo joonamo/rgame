@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4487373448156672629}
   - component: {fileID: 4487373448156672638}
   - component: {fileID: -6957940480101217929}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RepulsiveObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
