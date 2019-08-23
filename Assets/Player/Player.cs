@@ -13,7 +13,8 @@ public class Player : MonoBehaviour
 
     public Vector3 lastInput = Vector3.zero;
 
-    public Karhu karhu;
+    public GameObject karhu;
+    public GameObject repulsiveObj;
 
     //private float fireCooldown = 0.0f;
     private CharacterController charController;
@@ -118,6 +119,14 @@ public class Player : MonoBehaviour
         {
             Instantiate(
                 karhu,
+                this.gameObject.GetComponent<Player>().transform.position,
+                Quaternion.identity
+            );
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            Instantiate(
+                repulsiveObj,
                 this.gameObject.GetComponent<Player>().transform.position,
                 Quaternion.identity
             );
