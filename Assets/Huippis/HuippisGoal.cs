@@ -11,8 +11,10 @@ public class HuippisGoal : MonoBehaviour
     protected bool active;
 
     public GameObject whatIsHuippis;
+    public GameObject whatIsTitle;
 
-    public string GoalName = "Sauna";
+    public string goalName = "Sauna";
+    private TMPro.TextMeshPro titleMesh;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +22,13 @@ public class HuippisGoal : MonoBehaviour
         myCollider = GetComponent<Collider>();
         //myCollider.enabled = false;
         gameManager = FindObjectOfType<GameManager>();
+
+        titleMesh = Instantiate(
+            whatIsTitle,
+            transform.position + Vector3.up * (transform.localScale.y + 2),
+            Quaternion.identity)
+            .GetComponent<TMPro.TextMeshPro>();
+        titleMesh.text = goalName;
     }
 
     // Update is called once per frame

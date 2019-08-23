@@ -107,3 +107,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whatIsHuippis: {fileID: 5302808615396173408, guid: 2f2833771642c471aa7b7897431568c7,
     type: 3}
+  whatIsTitle: {fileID: 5280599447334381077, guid: 93a46c210798f43ce9d0d6d15762080c,
+    type: 3}
+  goalName: Sauna
