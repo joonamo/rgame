@@ -26,7 +26,9 @@ public class Huippis : MonoBehaviour
         foreach (POI poi in gameManager.POIs) {
             Vector3 diff = poi.transform.position - transform.position;
             if (diff.magnitude < poi.range) {
-                flockDirection += diff.normalized * poi.attract;
+                float decay = 1.0f - Mathf.Pow((diff.magnitude / poi.range), poi.exponent);
+                flockDirection += diff.normalized * poi.attract * decay;
+                flockDirection += poi.transform.forward * poi.directionMatch * decay;
             }
         }
         currentDirection = Vector3.Slerp(currentDirection, flockDirection, rotateSpeed * Time.deltaTime);

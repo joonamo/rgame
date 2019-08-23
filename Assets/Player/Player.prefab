@@ -147,3 +147,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 10
   attract: -1
+  directionMatch: 0

@@ -128,6 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 3
   attract: -1
+  directionMatch: 0.2
 --- !u!114 &2759144539206239739
 MonoBehaviour:
   m_ObjectHideFlags: 0
