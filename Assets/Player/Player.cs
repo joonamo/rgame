@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
 
     public Vector3 lastInput = Vector3.zero;
 
+    public Karhu karhu;
+
     //private float fireCooldown = 0.0f;
     private CharacterController charController;
     private float currentSpeed = 0.0f;
@@ -20,6 +22,8 @@ public class Player : MonoBehaviour
 
     private Plane groundPlane;
     private AudioSource[] audioSources;
+
+  
 
     // Use this for initialization
     void Start()
@@ -35,6 +39,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        HandleInput();
         Transform CamTran = Camera.main.transform;
         Vector3 forward = CamTran.forward;
         forward.y = 0;
@@ -105,5 +110,17 @@ public class Player : MonoBehaviour
         //{
         //    fireCooldown -= Time.deltaTime;
         //}
+    }
+
+    private void HandleInput()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Instantiate(
+                karhu,
+                this.gameObject.GetComponent<Player>().transform.position,
+                Quaternion.identity
+            );
+        }
     }
 }
