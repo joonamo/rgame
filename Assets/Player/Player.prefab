@@ -149,3 +149,5 @@ MonoBehaviour:
   decel: 400
   angularAccel: 5
   lastInput: {x: 0, y: 0, z: 0}
+  whatIsGoalPointer: {fileID: 7402597548678617577, guid: 6c9a1824384b448fd9251da6a17dbc09,
+    type: 3}

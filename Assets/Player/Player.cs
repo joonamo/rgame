@@ -15,6 +15,9 @@ public class Player : MonoBehaviour
 
     private Inventory inventory;
 
+    public GameObject whatIsGoalPointer;
+    private GameObject myGoalPointer;
+
     //private float fireCooldown = 0.0f;
     private CharacterController charController;
     protected GameManager gameManager;
@@ -37,11 +40,15 @@ public class Player : MonoBehaviour
 
         audioSources = GetComponents<AudioSource>();
         gameManager = FindObjectOfType<GameManager>();
+
+        myGoalPointer = Instantiate(whatIsGoalPointer, transform.position, Quaternion.identity);
     }
 
     // Update is called once per frame
     void Update()
     {
+        var currentGoal = gameManager.GetCurrentGoal();
+
         HandleInput();
         Transform CamTran = Camera.main.transform;
         Vector3 forward = CamTran.forward;
@@ -114,7 +121,12 @@ public class Player : MonoBehaviour
         //    fireCooldown -= Time.deltaTime;
         //}
 
-        Debug.DrawLine(transform.position, gameManager.GetCurrentGoal().transform.position, Color.green);
+        myGoalPointer.transform.position = transform.position;
+        if (currentGoal) {
+            Vector3 dirToGoal = currentGoal.transform.position - transform.position;
+            myGoalPointer.transform.rotation = Quaternion.LookRotation(dirToGoal.normalized);
+            //Debug.DrawLine(currentGoal.transform.position, transform.position);
+        }
     }
 
     private void HandleInput()
