@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2759144539206239739}
   m_Layer: 0
   m_Name: Huippis
-  m_TagString: Untagged
+  m_TagString: Huippis
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,6 +129,7 @@ MonoBehaviour:
   range: 3
   attract: -1
   directionMatch: 0.2
+  exponent: 1
 --- !u!114 &2759144539206239739
 MonoBehaviour:
   m_ObjectHideFlags: 0
