@@ -12,6 +12,8 @@ public class HuippisGoal : MonoBehaviour
 
     public GameObject whatIsHuippis;
 
+    public string GoalName = "Sauna";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,5 +49,6 @@ public class HuippisGoal : MonoBehaviour
         for (int i = huippisEntered; i > 0; --i) {
             Instantiate(whatIsHuippis, transform.position, transform.rotation);
         }
+        gameManager.GoalCompleted();
     }
 }

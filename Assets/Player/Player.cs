@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
 
     //private float fireCooldown = 0.0f;
     private CharacterController charController;
+    protected GameManager gameManager;
     private float currentSpeed = 0.0f;
     private bool swapRightAxis = false;
 
@@ -35,6 +36,7 @@ public class Player : MonoBehaviour
         groundPlane = new Plane(Vector3.up, Vector3.zero);
 
         audioSources = GetComponents<AudioSource>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -111,6 +113,8 @@ public class Player : MonoBehaviour
         //{
         //    fireCooldown -= Time.deltaTime;
         //}
+
+        Debug.DrawLine(transform.position, gameManager.GetCurrentGoal().transform.position, Color.green);
     }
 
     private void HandleInput()
