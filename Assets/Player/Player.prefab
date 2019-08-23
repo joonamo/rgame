@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2735134481566204966}
   - component: {fileID: 6534334071067224743}
   - component: {fileID: -7342553534013840527}
-  - component: {fileID: -7182787267282398811}
   - component: {fileID: 2238127972300274978}
+  - component: {fileID: 8229112357261731496}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -114,7 +114,23 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-7182787267282398811
+--- !u!114 &2238127972300274978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5891057677559316272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 228be02d48a2b4837b7de35ef3c6c333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 10
+  attract: -1
+  directionMatch: 0
+  exponent: 1
+--- !u!114 &8229112357261731496
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,22 +149,5 @@ MonoBehaviour:
   decel: 400
   angularAccel: 5
   lastInput: {x: 0, y: 0, z: 0}
-  karhu: {fileID: 1944177344423448774, guid: 9c427b360a2a94298a9396276b74832b, type: 3}
-  repulsiveObj: {fileID: 4487373448156672628, guid: d606241b7ae2c4bf1bc0c5a762a7e563,
-    type: 3}
---- !u!114 &2238127972300274978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5891057677559316272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 228be02d48a2b4837b7de35ef3c6c333, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  range: 10
-  attract: -1
-  directionMatch: 0
-  exponent: 1
+  karhu: {fileID: 0}
+  repulsiveObj: {fileID: 0}

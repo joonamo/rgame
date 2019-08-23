@@ -13,8 +13,7 @@ public class Player : MonoBehaviour
 
     public Vector3 lastInput = Vector3.zero;
 
-    public GameObject karhu;
-    public GameObject repulsiveObj;
+    private Inventory inventory;
 
     //private float fireCooldown = 0.0f;
     private CharacterController charController;
@@ -30,6 +29,7 @@ public class Player : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        inventory = FindObjectOfType<Inventory>();
         charController = GetComponent<CharacterController>();
         swapRightAxis = Application.platform == RuntimePlatform.WebGLPlayer;
 
@@ -121,19 +121,25 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            Instantiate(
-                karhu,
-                this.gameObject.GetComponent<Player>().transform.position,
-                Quaternion.identity
-            );
+            if (inventory.HasAttractive())
+            {
+                Instantiate(
+                    inventory.DropAttractive(),
+                    this.gameObject.GetComponent<Player>().transform.position,
+                    Quaternion.identity
+                );
+            }
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            Instantiate(
-                repulsiveObj,
-                this.gameObject.GetComponent<Player>().transform.position,
-                Quaternion.identity
-            );
+            if (inventory.HasRepulsive())
+            {
+                Instantiate(
+                    inventory.DropRepulsive(),
+                    this.gameObject.GetComponent<Player>().transform.position,
+                    Quaternion.identity
+                );
+            }
         }
     }
 }
