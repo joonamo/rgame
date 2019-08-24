@@ -32,7 +32,6 @@ public class Huippis : MonoBehaviour
 
         myCollider = GetComponent<Collider>();
         myPOI = GetComponents<POI>();
-        myCollider.enabled = false;
 
         charController = GetComponent<CharacterController>();
         gameManager = FindObjectOfType<GameManager>();
@@ -95,6 +94,7 @@ public class Huippis : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.tag);
         if (other.tag == "Droppable item")
         {
             Destroy(other.gameObject);
