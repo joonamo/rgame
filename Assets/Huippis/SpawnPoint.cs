@@ -15,12 +15,15 @@ public class SpawnPoint : MonoBehaviour
     private float startLoadTime;
     private bool loading;
     private bool playerClose;
+    private GameManager gameManager;
 
     private TMPro.TextMeshPro titleMesh;
     private LoadingIndicator loadingIndicator;
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
+
         titleMesh = Instantiate(
             whatIsTitle,
             transform.position + Vector3.up * (transform.localScale.y + 2),
@@ -108,7 +111,10 @@ public class SpawnPoint : MonoBehaviour
 
     private void HandleInput()
     {
-        if (playerClose && Input.GetButton("Jump"))
+        bool enableDangerObjects = gameManager.GetGameState() == GameState.STARTED ||
+            gameManager.GetGameState() == GameState.COMPLETED;
+
+        if (enableDangerObjects && playerClose && Input.GetButton("Jump"))
         {            
             if (!loading)
             {

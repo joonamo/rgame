@@ -41,10 +41,6 @@ public class Player : MonoBehaviour
 
         audioSources = GetComponents<AudioSource>();
         gameManager = FindObjectOfType<GameManager>();
-
-        myGoalPointer = Instantiate(whatIsGoalPointer, transform.position, Quaternion.identity);
-
-        myPOI = GetComponent<POI>();
     }
 
     // Update is called once per frame
@@ -52,7 +48,6 @@ public class Player : MonoBehaviour
     {
         var currentGoal = gameManager.GetCurrentGoal();
 
-        HandleInput();
         Transform CamTran = Camera.main.transform;
         Vector3 forward = CamTran.forward;
         forward.y = 0;
@@ -108,29 +103,24 @@ public class Player : MonoBehaviour
             }
         }
 
-        //if (fireCooldown <= 0.0f && AimV.magnitude > 0.5f)
-        //{
-        //    AimV.Normalize();
-        //    fireCooldown = fireDelay;
-        //    //GameObject newBullet = Instantiate(bulletClass);
-        //    newBullet.transform.position = gameObject.transform.position;
-        //    Bullet bulletComp = newBullet.GetComponent<Bullet>();
-        //    bulletComp.inheritedVelocity = lastInput * currentSpeed * inheritedSpeedScale;
-        //    bulletComp.bulletDirection = AimV;
+        if (gameManager.GetGameState() == GameState.STARTED)
+        {
+            HandleDropItemInput();
 
-        //    audioSources[Random.Range(0, audioSources.Length)].Play();
-        //}
-        //if (fireCooldown > 0.0f)
-        //{
-        //    fireCooldown -= Time.deltaTime;
-        //}
-
-        myGoalPointer.transform.position = transform.position;
-        if (currentGoal) {
-            Vector3 dirToGoal = currentGoal.transform.position - transform.position;
-            myGoalPointer.transform.rotation = Quaternion.LookRotation(dirToGoal.normalized);
-            //Debug.DrawLine(currentGoal.transform.position, transform.position);
+            myGoalPointer.transform.position = transform.position;
+            if (currentGoal)
+            {
+                Vector3 dirToGoal = currentGoal.transform.position - transform.position;
+                myGoalPointer.transform.rotation = Quaternion.LookRotation(dirToGoal.normalized);
+                //Debug.DrawLine(currentGoal.transform.position, transform.position);
+            }
         }
+    }
+
+    public void Init()
+    {
+        myGoalPointer = Instantiate(whatIsGoalPointer, transform.position, Quaternion.identity);
+        myPOI = GetComponent<POI>();
     }
 
     public void RechargeInventory(int attractiveCount, int repulsiveCount)
@@ -149,7 +139,7 @@ public class Player : MonoBehaviour
         return this.inventory.repulsiveObjCount;
     }
 
-    private void HandleInput()
+    private void HandleDropItemInput()
     {
         if (Input.GetButtonDown("DropItem1"))
         {

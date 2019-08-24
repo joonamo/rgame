@@ -43,7 +43,12 @@ public class HuippisGoal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!active && gameManager.GetCurrentGoal() && gameManager.GetCurrentGoal().GetInstanceID() == this.GetInstanceID())
+        if (
+            gameManager.GetGameState() == GameState.STARTED &&
+            !active &&
+            gameManager.GetCurrentGoal() &&
+            gameManager.GetCurrentGoal().GetInstanceID() == this.GetInstanceID()
+        )
         {
             Activate();
         }

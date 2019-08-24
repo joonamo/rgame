@@ -17,8 +17,9 @@ public class GameManager : MonoBehaviour
     protected TMPro.TextMeshProUGUI nextGoalText;
     protected TMPro.TextMeshProUGUI timerText;
 
+    protected GameState gameState = GameState.BEFORE_START;
+
     private Player player;
-    private bool gameOver;
     private float startTime;
     private int currentGoalIdx;
 
@@ -35,10 +36,7 @@ public class GameManager : MonoBehaviour
         winText.enabled = false;
         player = FindObjectOfType<Player>();
 
-        startTime = Time.time;
-
         goals = new List<HuippisGoal>(FindObjectsOfType<HuippisGoal>());
-        ActivateRandomNext();
     }
 
     public HuippisGoal GetCurrentGoal() {
@@ -52,6 +50,11 @@ public class GameManager : MonoBehaviour
     public void GoalCompleted() {
         multiplier = score;
         ActivateRandomNext();
+    }
+
+    public GameState GetGameState()
+    {
+        return gameState;
     }
 
     void ActivateRandomNext()
@@ -68,12 +71,20 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GetRemainingTime() <= 0)
+        HandleInput();
+
+        if (gameState != GameState.STARTED)
         {
-            gameOver = true;
+            return;
         }
 
-        if (gameOver)
+        if (GetRemainingTime() <= 0)
+        {
+            gameState = GameState.COMPLETED;
+            Time.timeScale = 0.0f;
+        }
+
+        if (gameState == GameState.COMPLETED)
         {
             winText.text = string.Format(
                 "Game over!\nYour score: {0}",
@@ -97,6 +108,18 @@ public class GameManager : MonoBehaviour
 
         float timeSinceNewGoal = Time.fixedUnscaledTime - goalStartTime;
         nextGoalText.enabled = timeSinceNewGoal < 5.0f && ((timeSinceNewGoal % 0.2f) < 0.1f);
+    }
+
+    private void HandleInput()
+    {
+        if (gameState == GameState.BEFORE_START && Input.GetButtonDown("Jump"))
+        {
+            Debug.Log("Start the game");
+            gameState = GameState.STARTED;
+            startTime = Time.time;
+            player.Init();
+            ActivateRandomNext();
+        }
     }
 
     private float GetRemainingTime()
