@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     public List<POI> POIs = new List<POI>();
     public List<HuippisGoal> route;
 
+    private bool firstFrame = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +18,6 @@ public class GameManager : MonoBehaviour
             route.Add(goals[index]);
             goals.RemoveAt(index);
         }
-
-        route[0].Activate();
     }
 
     public HuippisGoal GetCurrentGoal() {
@@ -34,5 +34,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (firstFrame) {
+            route[0].Activate();
+            firstFrame = false;
+        }
     }
 }
