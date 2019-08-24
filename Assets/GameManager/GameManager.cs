@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
     protected TMPro.TextMeshProUGUI winText;
     protected TMPro.TextMeshProUGUI nextGoalText;
     protected TMPro.TextMeshProUGUI timerText;
+    protected Image logoImage;
 
     protected GameState gameState = GameState.BEFORE_START;
 
@@ -33,10 +35,14 @@ public class GameManager : MonoBehaviour
         winText = GameObject.Find("WinText").GetComponent<TMPro.TextMeshProUGUI>();
         nextGoalText = GameObject.Find("NextGoalText").GetComponent<TMPro.TextMeshProUGUI>();
         timerText = GameObject.Find("Timer").GetComponent<TMPro.TextMeshProUGUI>();
+        logoImage = GameObject.Find("Logo").GetComponent<Image>();
         winText.enabled = false;
         player = FindObjectOfType<Player>();
 
         goals = new List<HuippisGoal>(FindObjectsOfType<HuippisGoal>());
+
+        winText.text = "Press Activate to start!";
+        winText.enabled = true;
     }
 
     public HuippisGoal GetCurrentGoal() {
@@ -122,6 +128,8 @@ public class GameManager : MonoBehaviour
             startTime = Time.time;
             player.Init();
             ActivateRandomNext();
+            logoImage.enabled = false;
+            winText.enabled = false;
         }
     }
 
