@@ -12,15 +12,19 @@ public class GameManager : MonoBehaviour
 
     public GameObject whatIsUI;
     protected TMPro.TextMeshProUGUI statusText;
+    protected TMPro.TextMeshProUGUI winText;
 
     private Player player;
     private bool firstFrame = true;
+    private bool gameOver;
 
     // Start is called before the first frame update
     void Start()
     {
         var uiGO = Instantiate(whatIsUI);
         statusText = GameObject.Find("StatusText").GetComponent<TMPro.TextMeshProUGUI>();
+        winText = GameObject.Find("WinText").GetComponent<TMPro.TextMeshProUGUI>();
+        winText.enabled = false;
         player = FindObjectOfType<Player>();
 
         var goals = new List<HuippisGoal>(FindObjectsOfType<HuippisGoal>());
@@ -48,6 +52,10 @@ public class GameManager : MonoBehaviour
         if (route.Count > 0) {
             route[0].Activate();
         }
+        else
+        {
+            gameOver = true;
+        }
     }
 
     // Update is called once per frame
@@ -58,13 +66,25 @@ public class GameManager : MonoBehaviour
             firstFrame = false;
         }
 
-        statusText.text = string.Format(
-            "Next Activity: {0}\nScore: {1}\nMultiplier: {2}\nKarhu: {3}\nKulta Katriina: {4}",
-            GetCurrentGoal().goalName,
-            score,
-            multiplier,
-            player.getAttractiveObjCount(),
-            player.getRepulsiveObjCount()
-        );
+        if (gameOver)
+        {
+            winText.text = string.Format(
+                "Game over!\nYour score: {0}",
+                score
+            );
+            statusText.enabled = false;
+            winText.enabled = true;
+        }
+        else
+        {
+            statusText.text = string.Format(
+                "Next Activity: {0}\nScore: {1}\nMultiplier: {2}\nKarhu: {3}\nKulta Katriina: {4}",
+                GetCurrentGoal().goalName,
+                score,
+                multiplier,
+                player.getAttractiveObjCount(),
+                player.getRepulsiveObjCount()
+            );
+        }
     }
 }
