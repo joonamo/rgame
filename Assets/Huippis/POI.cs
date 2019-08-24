@@ -8,6 +8,7 @@ public class POI : MonoBehaviour
     public float attract = 1.0f;
     public float directionMatch = 0.0f;
     public float exponent = 1.0f;
+    public float speedup = 0.0f;
 
     public Vector3 forward;
 

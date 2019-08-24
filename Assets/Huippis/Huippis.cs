@@ -9,6 +9,8 @@ public class Huippis : MonoBehaviour
     protected Vector3 currentDirection;
     public float rotateSpeed = 10.0f;
     public float speed = 3.0f;
+    public float speedModifySpeed = 5.0f;
+    protected float currentSpeedModify = 0.0f;
 
     protected int sightRayMask = 1 << 11;
 
@@ -41,6 +43,7 @@ public class Huippis : MonoBehaviour
     void Update()
     {
         Vector3 flockDirection = currentDirection;
+        float speedModify = 0.0f;
         foreach (POI poi in gameManager.POIs)
         {
             Vector3 diff = poi.transform.position - transform.position;
@@ -53,6 +56,7 @@ public class Huippis : MonoBehaviour
                 //Debug.DrawLine(transform.position, poi.transform.position); //Vector3.Lerp(transform.position, poi.transform.position, decay));
                 flockDirection += diff.normalized * poi.attract * decay;
                 flockDirection += poi.forward * poi.directionMatch * decay;
+                speedModify += poi.speedup;
             }
         }
         if (flockDirection.magnitude > 0) {
@@ -73,7 +77,8 @@ public class Huippis : MonoBehaviour
         Debug.DrawLine(transform.position, transform.position + leftQ * currentDirection * 5);
         Debug.DrawLine(transform.position, transform.position + rightQ * currentDirection * 5);
 
-        charController.SimpleMove(currentDirection * speed);
+        currentSpeedModify = Mathf.Lerp(currentSpeedModify, speedModify, Time.deltaTime * speedModifySpeed);
+        charController.SimpleMove(currentDirection * (speed + currentSpeedModify));
         foreach (POI poi in myPOI){
             poi.forward = currentDirection;
         }

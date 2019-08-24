@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4487373448156672629}
   - component: {fileID: 4487373448156672638}
   - component: {fileID: -6957940480101217929}
+  - component: {fileID: -1398463198938328947}
   m_Layer: 8
   m_Name: RepulsiveObj
   m_TagString: Droppable item
@@ -123,10 +124,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 228be02d48a2b4837b7de35ef3c6c333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 10
+  range: 20
   attract: -4
   directionMatch: 0
   exponent: 1
+  speedup: 1
+  forward: {x: 0, y: 0, z: 0}
 --- !u!114 &-6957940480101217929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,3 +142,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75b62d6bd3c5c4068bfe7dfa12cf3006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1398463198938328947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4487373448156672628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19a680c6139554fe085a77a32be81099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 10
