@@ -131,7 +131,7 @@ public class Player : MonoBehaviour
 
     private void HandleInput()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetButtonDown("DropItem1"))
         {
             if (inventory.HasAttractive())
             {
@@ -142,7 +142,7 @@ public class Player : MonoBehaviour
                 );
             }
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetButtonDown("DropItem2"))
         {
             if (inventory.HasRepulsive())
             {
