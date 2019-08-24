@@ -61,6 +61,9 @@ public class GameManager : MonoBehaviour
     {
         GetCurrentGoal().Deactivate();
         int index = Random.Range(0, goals.Count);
+        while (index == currentGoalIdx) {
+            index = Random.Range(0, goals.Count);
+        }
         currentGoalIdx = index;
         goals[currentGoalIdx].Activate();
         goalStartTime = Time.fixedUnscaledTime;
