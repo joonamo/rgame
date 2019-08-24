@@ -6,6 +6,7 @@ public class HuippisGoal : MonoBehaviour
 {
     protected Collider myCollider;
     protected GameManager gameManager;
+    protected POI myPOI;
 
     protected int huippisEntered;
     protected bool active;
@@ -20,6 +21,7 @@ public class HuippisGoal : MonoBehaviour
     void Start()
     {
         myCollider = GetComponent<Collider>();
+        myPOI = GetComponent<POI>();
         //myCollider.enabled = false;
         gameManager = FindObjectOfType<GameManager>();
 
@@ -51,6 +53,7 @@ public class HuippisGoal : MonoBehaviour
 
     public void Activate() {
         myCollider.enabled = true;
+        myPOI.attract = 0.5f;
     }
 
     public void Deactivate() {
@@ -59,5 +62,6 @@ public class HuippisGoal : MonoBehaviour
             Instantiate(whatIsHuippis, transform.position, transform.rotation);
         }
         gameManager.GoalCompleted();
+        myPOI.attract = 0.0f;
     }
 }

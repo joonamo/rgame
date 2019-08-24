@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6042406952717429881}
   - component: {fileID: -3509781978586546391}
   - component: {fileID: -5043436143495949737}
+  - component: {fileID: 876083009490417845}
   m_Layer: 0
   m_Name: HuippisGoal
   m_TagString: Untagged
@@ -110,3 +111,19 @@ MonoBehaviour:
   whatIsTitle: {fileID: 5280599447334381077, guid: 93a46c210798f43ce9d0d6d15762080c,
     type: 3}
   goalName: Sauna
+--- !u!114 &876083009490417845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2589847603472924789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 228be02d48a2b4837b7de35ef3c6c333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 30
+  attract: 0
+  directionMatch: 0
+  exponent: 1
