@@ -46,7 +46,6 @@ public class Huippis : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.tag);
         if (other.tag == "Droppable item")
         {
             Destroy(other.gameObject);

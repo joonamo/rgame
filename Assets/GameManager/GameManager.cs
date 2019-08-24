@@ -7,11 +7,20 @@ public class GameManager : MonoBehaviour
     public List<POI> POIs = new List<POI>();
     public List<HuippisGoal> route;
 
+    public int score = 0;
+    public int multiplier = 1;
+
+    public GameObject whatIsUI;
+    protected TMPro.TextMeshProUGUI statusText;
+
     private bool firstFrame = true;
 
     // Start is called before the first frame update
     void Start()
     {
+        var uiGO = Instantiate(whatIsUI);
+        statusText = GameObject.Find("StatusText").GetComponent<TMPro.TextMeshProUGUI>();
+
         var goals = new List<HuippisGoal>(FindObjectsOfType<HuippisGoal>());
         while (goals.Count > 0 && route.Count < 5) {
             int index = Random.Range(0, goals.Count);
@@ -24,8 +33,14 @@ public class GameManager : MonoBehaviour
         return route.Count > 0 ? route[0] : null ;
     }
 
+    public void addScore() {
+        print("Add score");
+        score += multiplier;
+    }
+
     public void GoalCompleted() {
         route.RemoveAt(0);
+        multiplier = score;
         if (route.Count > 0) {
             route[0].Activate();
         }
@@ -38,5 +53,9 @@ public class GameManager : MonoBehaviour
             route[0].Activate();
             firstFrame = false;
         }
+
+        statusText.text = string.Format(
+            "Next Activity: {0}\nScore: {1}\nMultiplier: {2}",
+            GetCurrentGoal().goalName, score, multiplier);
     }
 }

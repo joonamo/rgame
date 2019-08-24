@@ -40,11 +40,12 @@ public class HuippisGoal : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Enter!");
         if (other.tag == "Huippis")
         {
             Destroy(other.gameObject);
             ++huippisEntered;
+            print("Adding Score");
+            gameManager.addScore();
         }
         else if (other.tag == "Player") {
             Deactivate();

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1841518642922884684}
   - component: {fileID: 6072277388084985496}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,3 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a07246483ad4144a69741db45e6b88f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  POIs: []
+  route: []
+  score: 0
+  multiplier: 1
+  whatIsUI: {fileID: 1729113219171906114, guid: 38598798b767c4076b91430273fa3c00,
+    type: 3}
