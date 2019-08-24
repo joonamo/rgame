@@ -13,22 +13,26 @@ public class Huippis : MonoBehaviour
     protected int sightRayMask = 1 << 11;
 
     protected CharacterController charController;
+    protected POI[] myPOI;
 
     // Start is called before the first frame update
     void Start()
     {
         myCollider = GetComponent<Collider>();
+        myPOI = GetComponents<POI>();
         myCollider.enabled = false;
 
         charController = GetComponent<CharacterController>();
         gameManager = FindObjectOfType<GameManager>();
-        currentDirection = new Vector3(Random.Range(-1, 1), 0, Random.Range(-1, 1)).normalized;
+        currentDirection = new Vector3(Random.Range(-1.0f, 1.0f), 0, Random.Range(-1.0f, 1.0f)).normalized;
+
+        speed += Random.Range(0.0f, 0.5f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 flockDirection = Vector3.zero;
+        Vector3 flockDirection = currentDirection;
         foreach (POI poi in gameManager.POIs)
         {
             Vector3 diff = poi.transform.position - transform.position;
@@ -38,8 +42,9 @@ public class Huippis : MonoBehaviour
                     transform.position, diff.normalized, diff.magnitude, sightRayMask))
             {
                 float decay = 1.0f - Mathf.Pow((diff.magnitude / poi.range), poi.exponent);
+                //Debug.DrawLine(transform.position, poi.transform.position); //Vector3.Lerp(transform.position, poi.transform.position, decay));
                 flockDirection += diff.normalized * poi.attract * decay;
-                flockDirection += poi.transform.forward * poi.directionMatch * decay;
+                flockDirection += poi.forward * poi.directionMatch * decay;
             }
         }
         if (flockDirection.magnitude > 0) {
@@ -49,6 +54,10 @@ public class Huippis : MonoBehaviour
         }
 
         charController.SimpleMove(currentDirection * speed);
+        foreach (POI poi in myPOI){
+            poi.forward = currentDirection;
+        }
+        //Debug.DrawLine(transform.position, transform.position + currentDirection * 5);
     }
 
     private void OnTriggerEnter(Collider other)

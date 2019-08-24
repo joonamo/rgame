@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5486592383583678110}
   - component: {fileID: 477583193905745264}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: GoalTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141,8 +141,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

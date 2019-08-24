@@ -9,6 +9,8 @@ public class POI : MonoBehaviour
     public float directionMatch = 0.0f;
     public float exponent = 1.0f;
 
+    public Vector3 forward;
+
     protected GameManager gameManager;
 
     // Start is called before the first frame update
