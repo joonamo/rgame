@@ -129,6 +129,12 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void RechargeInventory(int attractiveCount, int repulsiveCount)
+    {
+        this.inventory.AddAttractive(attractiveCount);
+        this.inventory.AddRepulsive(repulsiveCount);
+    }
+
     private void HandleInput()
     {
         if (Input.GetButtonDown("DropItem1"))

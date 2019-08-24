@@ -11,6 +11,9 @@ public class HuippisGoal : MonoBehaviour
     protected int huippisEntered;
     protected bool active;
 
+    public int attractiveObjGain;
+    public int repulsiveObjGain;
+
     public GameObject whatIsHuippis;
     public GameObject whatIsTitle;
 
@@ -49,6 +52,7 @@ public class HuippisGoal : MonoBehaviour
         }
         else if (other.tag == "Player") {
             Deactivate();
+            RechargeSupplies(other.GetComponent<Player>());
         }
     }
 
@@ -64,5 +68,10 @@ public class HuippisGoal : MonoBehaviour
         }
         gameManager.GoalCompleted();
         myPOI.attract = 0.0f;
+    }
+
+    private void RechargeSupplies(Player player)
+    {
+        player.RechargeInventory(attractiveObjGain, repulsiveObjGain);
     }
 }

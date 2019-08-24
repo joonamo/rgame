@@ -35,8 +35,16 @@ public class Inventory : MonoBehaviour
     {
         this.attractiveObjCount++;
     }
+    public void AddAttractive(int count)
+    {
+        this.attractiveObjCount += count;
+    }
     public void AddRepulsive()
     {
         this.repulsiveObjCount++;
+    }
+    public void AddRepulsive(int count)
+    {
+        this.repulsiveObjCount += count;
     }
 }
