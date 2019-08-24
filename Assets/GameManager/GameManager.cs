@@ -117,7 +117,7 @@ public class GameManager : MonoBehaviour
                 player.getAttractiveObjCount(),
                 player.getRepulsiveObjCount()
             );
-            timerText.text = GetRemainingTime().ToString();
+            timerText.text = GetRemainingTime().ToString("0.00");
         }
 
         float timeSinceNewGoal = Time.fixedUnscaledTime - goalStartTime;
