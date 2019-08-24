@@ -22,6 +22,8 @@ public class Huippis : MonoBehaviour
     Quaternion leftQ;
     Quaternion rightQ;
 
+    protected float stoppedTime;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +44,12 @@ public class Huippis : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        stoppedTime += charController.velocity.magnitude > 1 ? 0 : Time.deltaTime;
+        if (stoppedTime > 1.0f) {
+            currentDirection = -currentDirection;
+            stoppedTime = 0.0f;
+        }
+
         Vector3 flockDirection = currentDirection;
         float speedModify = 0.0f;
         foreach (POI poi in gameManager.POIs)

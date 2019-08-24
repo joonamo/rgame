@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
 
     public GameObject whatIsGoalPointer;
     private GameObject myGoalPointer;
+    private POI myPOI;
 
     //private float fireCooldown = 0.0f;
     private CharacterController charController;
@@ -42,6 +43,8 @@ public class Player : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
 
         myGoalPointer = Instantiate(whatIsGoalPointer, transform.position, Quaternion.identity);
+
+        myPOI = GetComponent<POI>();
     }
 
     // Update is called once per frame
@@ -78,6 +81,7 @@ public class Player : MonoBehaviour
         if (currentSpeed > 0.0f)
         {
             charController.SimpleMove(lastInput * currentSpeed);
+            myPOI.forward = lastInput;
         }
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

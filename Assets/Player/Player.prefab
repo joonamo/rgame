@@ -128,8 +128,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 4
   attract: -0.1
-  directionMatch: 0
+  directionMatch: 5
   exponent: 1
+  speedup: 0
+  forward: {x: 0, y: 0, z: 0}
 --- !u!114 &8229112357261731496
 MonoBehaviour:
   m_ObjectHideFlags: 0

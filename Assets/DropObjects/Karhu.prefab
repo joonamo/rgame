@@ -141,5 +141,5 @@ MonoBehaviour:
   attract: 100
   directionMatch: 0
   exponent: 5
-  speedup: 3
+  speedup: 0.1
   forward: {x: 0, y: 0, z: 0}

@@ -96,7 +96,6 @@ public class GameManager : MonoBehaviour
         }
 
         float timeSinceNewGoal = Time.fixedUnscaledTime - goalStartTime;
-        print(timeSinceNewGoal);
         nextGoalText.enabled = timeSinceNewGoal < 5.0f && ((timeSinceNewGoal % 0.2f) < 0.1f);
     }
 
