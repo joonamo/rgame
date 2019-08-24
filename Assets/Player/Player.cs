@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
     {
         inventory = FindObjectOfType<Inventory>();
         charController = GetComponent<CharacterController>();
+        myPOI = GetComponent<POI>();
         swapRightAxis = Application.platform == RuntimePlatform.WebGLPlayer;
 
         groundPlane = new Plane(Vector3.up, Vector3.zero);
