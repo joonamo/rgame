@@ -47,7 +47,6 @@ public class HuippisGoal : MonoBehaviour
         {
             Destroy(other.gameObject);
             ++huippisEntered;
-            print("Adding Score");
             gameManager.addScore();
         }
         else if (other.tag == "Player") {

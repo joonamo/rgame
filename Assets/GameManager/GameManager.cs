@@ -36,7 +36,6 @@ public class GameManager : MonoBehaviour
     }
 
     public void addScore() {
-        print("Add score");
         score += multiplier;
     }
 
