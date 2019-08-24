@@ -10,7 +10,6 @@ public class Inventory : MonoBehaviour
     public int attractiveObjCount;
     public int repulsiveObjCount;
 
-
     public bool HasAttractive()
     {
         return this.attractiveObjCount > 0;

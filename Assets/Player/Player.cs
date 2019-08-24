@@ -135,6 +135,16 @@ public class Player : MonoBehaviour
         this.inventory.AddRepulsive(repulsiveCount);
     }
 
+    public int getAttractiveObjCount()
+    {
+        return this.inventory.attractiveObjCount;
+    }
+
+    public int getRepulsiveObjCount()
+    {
+        return this.inventory.repulsiveObjCount;
+    }
+
     private void HandleInput()
     {
         if (Input.GetButtonDown("DropItem1"))

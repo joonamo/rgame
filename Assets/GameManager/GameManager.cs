@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject whatIsUI;
     protected TMPro.TextMeshProUGUI statusText;
 
+    private Player player;
     private bool firstFrame = true;
 
     // Start is called before the first frame update
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
     {
         var uiGO = Instantiate(whatIsUI);
         statusText = GameObject.Find("StatusText").GetComponent<TMPro.TextMeshProUGUI>();
+        player = FindObjectOfType<Player>();
 
         var goals = new List<HuippisGoal>(FindObjectsOfType<HuippisGoal>());
         while (goals.Count > 0 && route.Count < 5) {
@@ -55,7 +57,12 @@ public class GameManager : MonoBehaviour
         }
 
         statusText.text = string.Format(
-            "Next Activity: {0}\nScore: {1}\nMultiplier: {2}",
-            GetCurrentGoal().goalName, score, multiplier);
+            "Next Activity: {0}\nScore: {1}\nMultiplier: {2}\nKarhu: {3}\nKulta Katriina: {4}",
+            GetCurrentGoal().goalName,
+            score,
+            multiplier,
+            player.getAttractiveObjCount(),
+            player.getRepulsiveObjCount()
+        );
     }
 }
