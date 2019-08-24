@@ -9,14 +9,17 @@ public class GameManager : MonoBehaviour
 
     public int score = 0;
     public int multiplier = 1;
+    public float totalTime;
 
     public GameObject whatIsUI;
     protected TMPro.TextMeshProUGUI statusText;
     protected TMPro.TextMeshProUGUI winText;
+    protected TMPro.TextMeshProUGUI timerText;
 
     private Player player;
     private bool firstFrame = true;
     private bool gameOver;
+    private float startTime;
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +27,11 @@ public class GameManager : MonoBehaviour
         var uiGO = Instantiate(whatIsUI);
         statusText = GameObject.Find("StatusText").GetComponent<TMPro.TextMeshProUGUI>();
         winText = GameObject.Find("WinText").GetComponent<TMPro.TextMeshProUGUI>();
+        timerText = GameObject.Find("Timer").GetComponent<TMPro.TextMeshProUGUI>();
         winText.enabled = false;
         player = FindObjectOfType<Player>();
+
+        startTime = Time.time;
 
         var goals = new List<HuippisGoal>(FindObjectsOfType<HuippisGoal>());
         while (goals.Count > 0 && route.Count < 5) {
@@ -85,6 +91,7 @@ public class GameManager : MonoBehaviour
                 player.getAttractiveObjCount(),
                 player.getRepulsiveObjCount()
             );
+            timerText.text = ((totalTime - (Time.time - startTime))).ToString();
         }
     }
 }
