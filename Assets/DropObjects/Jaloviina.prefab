@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 228be02d48a2b4837b7de35ef3c6c333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 3
+  range: 7
   attract: 1
   directionMatch: 0
   exponent: 1
