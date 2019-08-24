@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1944177344423448776}
   - component: {fileID: 1944177344423448780}
   - component: {fileID: -5129508000144551243}
+  - component: {fileID: -6378695988184623935}
   m_Layer: 8
   m_Name: Karhu
   m_TagString: Droppable item
@@ -110,6 +111,8 @@ MonoBehaviour:
   attract: 4
   directionMatch: 0
   exponent: 2
+  speedup: 0
+  forward: {x: 0, y: 0, z: 0}
 --- !u!114 &-5129508000144551243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,3 +125,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12d379e482a654347b9cb971d03bdf97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6378695988184623935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944177344423448774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 228be02d48a2b4837b7de35ef3c6c333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 3
+  attract: 100
+  directionMatch: 0
+  exponent: 5
+  speedup: 3
+  forward: {x: 0, y: 0, z: 0}
