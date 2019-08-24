@@ -259,7 +259,7 @@ PrefabInstance:
     - target: {fileID: 6072277388084985496, guid: 41e411ff884714b2ba3aebb43291e4d3,
         type: 3}
       propertyPath: totalTime
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41e411ff884714b2ba3aebb43291e4d3, type: 3}
@@ -780,6 +780,7 @@ MonoBehaviour:
   attract: 1
   directionMatch: 0
   exponent: 1
+  forward: {x: 0, y: 0, z: 0}
 --- !u!4 &1589110170
 Transform:
   m_ObjectHideFlags: 0
@@ -827,6 +828,7 @@ MonoBehaviour:
   attract: 1
   directionMatch: 0
   exponent: 1
+  forward: {x: 0, y: 0, z: 0}
 --- !u!4 &1627703753
 Transform:
   m_ObjectHideFlags: 0
@@ -1104,6 +1106,7 @@ MonoBehaviour:
   attract: 1
   directionMatch: 0
   exponent: 1
+  forward: {x: 0, y: 0, z: 0}
 --- !u!4 &2135157278
 Transform:
   m_ObjectHideFlags: 0

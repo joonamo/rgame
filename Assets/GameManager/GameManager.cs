@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
     protected TMPro.TextMeshProUGUI timerText;
 
     private Player player;
-    private bool firstFrame = true;
     private bool gameOver;
     private float startTime;
     private int currentGoalIdx;
@@ -62,8 +61,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (firstFrame) {
-            firstFrame = false;
+        if (GetRemainingTime() <= 0)
+        {
+            gameOver = true;
         }
 
         if (gameOver)
@@ -85,7 +85,12 @@ public class GameManager : MonoBehaviour
                 player.getAttractiveObjCount(),
                 player.getRepulsiveObjCount()
             );
-            timerText.text = ((totalTime - (Time.time - startTime))).ToString();
+            timerText.text = GetRemainingTime().ToString();
         }
+    }
+
+    private float GetRemainingTime()
+    {
+        return totalTime - (Time.time - startTime);
     }
 }
