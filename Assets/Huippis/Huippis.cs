@@ -15,9 +15,17 @@ public class Huippis : MonoBehaviour
     protected CharacterController charController;
     protected POI[] myPOI;
 
+    public float avoidAngle = 20.0f;
+    public float avoidSpeed = 30.0f;
+    Quaternion leftQ;
+    Quaternion rightQ;
+
     // Start is called before the first frame update
     void Start()
     {
+        leftQ = Quaternion.Euler(0, avoidAngle, 0);
+        rightQ = Quaternion.Euler(0, -avoidAngle, 0);
+
         myCollider = GetComponent<Collider>();
         myPOI = GetComponents<POI>();
         myCollider.enabled = false;
@@ -52,6 +60,18 @@ public class Huippis : MonoBehaviour
             currentDirection.y = 0;
             currentDirection.Normalize();
         }
+
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, leftQ * currentDirection, out hit, 5.0f, sightRayMask)) {
+            var str = 1.0f - hit.distance / 5.0f;
+            currentDirection = Quaternion.Euler(0, -str * avoidAngle * Time.deltaTime * avoidSpeed, 0) * currentDirection;
+        }
+        if (Physics.Raycast(transform.position, rightQ * currentDirection, out hit, 5.0f, sightRayMask)) {
+            var str = 1.0f - hit.distance / 5.0f;
+            currentDirection = Quaternion.Euler(0, str * avoidAngle * Time.deltaTime * avoidSpeed, 0) * currentDirection;
+        }
+        Debug.DrawLine(transform.position, transform.position + leftQ * currentDirection * 5);
+        Debug.DrawLine(transform.position, transform.position + rightQ * currentDirection * 5);
 
         charController.SimpleMove(currentDirection * speed);
         foreach (POI poi in myPOI){
