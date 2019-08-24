@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -30,6 +31,10 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        score = 0;
+        multiplier = 1;
+        gameState = GameState.BEFORE_START;
+
         var uiGO = Instantiate(whatIsUI);
         statusText = GameObject.Find("StatusText").GetComponent<TMPro.TextMeshProUGUI>();
         winText = GameObject.Find("WinText").GetComponent<TMPro.TextMeshProUGUI>();
@@ -96,7 +101,7 @@ public class GameManager : MonoBehaviour
         if (gameState == GameState.COMPLETED)
         {
             winText.text = string.Format(
-                "Game over!\nYour score: {0}",
+                "Game over!\nYour score: {0}\n Press action button to start again",
                 score
             );
             statusText.enabled = false;
@@ -130,6 +135,10 @@ public class GameManager : MonoBehaviour
             ActivateRandomNext();
             logoImage.enabled = false;
             winText.enabled = false;
+        }
+        else if (gameState == GameState.COMPLETED && Input.GetButtonDown("Jump"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 

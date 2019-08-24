@@ -77,7 +77,10 @@ public class Player : MonoBehaviour
         if (currentSpeed > 0.0f)
         {
             charController.SimpleMove(lastInput * currentSpeed);
-            myPOI.forward = lastInput;
+            if (myPOI != null)
+            {
+                myPOI.forward = lastInput;
+            }
         }
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
