@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
         if (gameState == GameState.COMPLETED)
         {
             winText.text = string.Format(
-                "Game over!\nYour score: {0}\n Press action button to start again",
+                "Game over!\nYour score: {0}\n\n Press Activate to start again",
                 score
             );
             statusText.enabled = false;
@@ -139,6 +139,7 @@ public class GameManager : MonoBehaviour
         else if (gameState == GameState.COMPLETED && Input.GetButtonDown("Jump"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Time.timeScale = 1.0f;
         }
     }
 
