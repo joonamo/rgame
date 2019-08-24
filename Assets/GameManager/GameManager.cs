@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public GameObject whatIsUI;
     protected TMPro.TextMeshProUGUI statusText;
     protected TMPro.TextMeshProUGUI winText;
+    protected TMPro.TextMeshProUGUI nextGoalText;
     protected TMPro.TextMeshProUGUI timerText;
 
     private Player player;
@@ -21,12 +22,15 @@ public class GameManager : MonoBehaviour
     private float startTime;
     private int currentGoalIdx;
 
+    protected float goalStartTime;
+
     // Start is called before the first frame update
     void Start()
     {
         var uiGO = Instantiate(whatIsUI);
         statusText = GameObject.Find("StatusText").GetComponent<TMPro.TextMeshProUGUI>();
         winText = GameObject.Find("WinText").GetComponent<TMPro.TextMeshProUGUI>();
+        nextGoalText = GameObject.Find("NextGoalText").GetComponent<TMPro.TextMeshProUGUI>();
         timerText = GameObject.Find("Timer").GetComponent<TMPro.TextMeshProUGUI>();
         winText.enabled = false;
         player = FindObjectOfType<Player>();
@@ -56,6 +60,9 @@ public class GameManager : MonoBehaviour
         int index = Random.Range(0, goals.Count);
         currentGoalIdx = index;
         goals[currentGoalIdx].Activate();
+        goalStartTime = Time.fixedUnscaledTime;
+
+        nextGoalText.text = string.Format("Next up:\n{0}", goals[currentGoalIdx].goalName);
     }
 
     // Update is called once per frame
@@ -87,6 +94,10 @@ public class GameManager : MonoBehaviour
             );
             timerText.text = GetRemainingTime().ToString();
         }
+
+        float timeSinceNewGoal = Time.fixedUnscaledTime - goalStartTime;
+        print(timeSinceNewGoal);
+        nextGoalText.enabled = timeSinceNewGoal < 5.0f && ((timeSinceNewGoal % 0.2f) < 0.1f);
     }
 
     private float GetRemainingTime()
