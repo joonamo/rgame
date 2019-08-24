@@ -5,6 +5,7 @@ using UnityEngine;
 public class HuippisGoal : MonoBehaviour
 {
     protected Collider myCollider;
+    protected Renderer[] myRenderers;
     protected GameManager gameManager;
     protected POI myPOI;
 
@@ -24,6 +25,7 @@ public class HuippisGoal : MonoBehaviour
     void Start()
     {
         myCollider = GetComponent<Collider>();
+        myRenderers = GetComponents<Renderer>();
         myPOI = GetComponent<POI>();
         //myCollider.enabled = false;
         gameManager = FindObjectOfType<GameManager>();
@@ -34,15 +36,26 @@ public class HuippisGoal : MonoBehaviour
             Quaternion.identity)
             .GetComponent<TMPro.TextMeshPro>();
         titleMesh.text = goalName;
+
+        Deactivate();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!active && gameManager.GetCurrentGoal().GetInstanceID() == this.GetInstanceID())
+        {
+            Activate();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!active)
+        {
+            return;
+        }
+
         if (other.tag == "Huippis")
         {
             Destroy(other.gameObject);
@@ -50,23 +63,44 @@ public class HuippisGoal : MonoBehaviour
             gameManager.addScore();
         }
         else if (other.tag == "Player") {
-            Deactivate();
+            CompleteGoal();
             RechargeSupplies(other.GetComponent<Player>());
         }
     }
 
     public void Activate() {
+        Debug.Log("Activated");
+        active = true;
         myCollider.enabled = true;
         myPOI.attract = 0.5f;
+        foreach (var r in myRenderers)
+        {
+            r.enabled = true;
+        }
+        titleMesh.enabled = true;
     }
 
-    public void Deactivate() {
+    public void Deactivate()
+    {
+        active = false;
         myCollider.enabled = false;
+        myPOI.attract = 0.0f;
+        Debug.Log("Deactivated");
+        foreach (var r in myRenderers)
+        {
+            r.enabled = false;
+        }
+        titleMesh.enabled = false;
+    }
+
+    public void CompleteGoal()
+    {
+        Deactivate();
         for (int i = huippisEntered; i > 0; --i) {
             Instantiate(whatIsHuippis, transform.position, transform.rotation);
         }
         gameManager.GoalCompleted();
-        myPOI.attract = 0.0f;
+        
     }
 
     private void RechargeSupplies(Player player)

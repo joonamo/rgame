@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
             route.Add(goals[index]);
             goals.RemoveAt(index);
         }
+
+        route[0].Activate();
     }
 
     public HuippisGoal GetCurrentGoal() {
@@ -40,6 +42,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void GoalCompleted() {
+        route[0].Deactivate();
         route.RemoveAt(0);
         multiplier = score;
         if (route.Count > 0) {
