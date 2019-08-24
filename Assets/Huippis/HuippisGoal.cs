@@ -51,6 +51,7 @@ public class HuippisGoal : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Entered");
         if (!active)
         {
             return;
@@ -62,7 +63,12 @@ public class HuippisGoal : MonoBehaviour
             ++huippisEntered;
             gameManager.addScore();
         }
-        else if (other.tag == "Player") {
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Player" && Input.GetButtonDown("Jump"))
+        {
             CompleteGoal();
             RechargeSupplies(other.GetComponent<Player>());
         }
