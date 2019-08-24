@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Huippis
   - Droppable item
+  - Danger item
   layers:
   - Default
   - TransparentFX

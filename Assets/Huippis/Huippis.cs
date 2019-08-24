@@ -90,6 +90,10 @@ public class Huippis : MonoBehaviour
         if (other.tag == "Droppable item")
         {
             Destroy(other.gameObject);
+        } else if (other.tag == "Danger item")
+        {
+            Destroy(this.gameObject);
+            Destroy(other.gameObject);
         }
     }
 
