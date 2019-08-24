@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 19801070}
   - component: {fileID: 19801069}
   - component: {fileID: 19801068}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (46)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 22520635}
   - component: {fileID: 22520634}
   - component: {fileID: 22520633}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (43)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 27553845}
   - component: {fileID: 27553844}
   - component: {fileID: 27553843}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -408,7 +408,7 @@ GameObject:
   - component: {fileID: 37001605}
   - component: {fileID: 37001604}
   - component: {fileID: 37001603}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -500,7 +500,7 @@ GameObject:
   - component: {fileID: 50377335}
   - component: {fileID: 50377334}
   - component: {fileID: 50377333}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -592,7 +592,7 @@ GameObject:
   - component: {fileID: 55805409}
   - component: {fileID: 55805408}
   - component: {fileID: 55805407}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (39)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -759,6 +759,16 @@ PrefabInstance:
       propertyPath: goalName
       value: Boardgames
       objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: attractiveObjGain
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: repulsiveObjGain
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6042406952717429881, guid: 041b60be9592344f8945e909f8a3a315,
         type: 3}
       propertyPath: m_Enabled
@@ -784,7 +794,7 @@ GameObject:
   - component: {fileID: 157847264}
   - component: {fileID: 157847263}
   - component: {fileID: 157847262}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (41)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -876,7 +886,7 @@ GameObject:
   - component: {fileID: 196954498}
   - component: {fileID: 196954497}
   - component: {fileID: 196954496}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1112,6 +1122,16 @@ PrefabInstance:
       propertyPath: goalName
       value: Retro
       objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: attractiveObjGain
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: repulsiveObjGain
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6042406952717429881, guid: 041b60be9592344f8945e909f8a3a315,
         type: 3}
       propertyPath: m_Enabled
@@ -1137,7 +1157,7 @@ GameObject:
   - component: {fileID: 323134471}
   - component: {fileID: 323134470}
   - component: {fileID: 323134469}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1235,7 +1255,7 @@ GameObject:
   - component: {fileID: 380779318}
   - component: {fileID: 380779317}
   - component: {fileID: 380779316}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1402,6 +1422,16 @@ PrefabInstance:
       propertyPath: goalName
       value: Smoke break
       objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: attractiveObjGain
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: repulsiveObjGain
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6042406952717429881, guid: 041b60be9592344f8945e909f8a3a315,
         type: 3}
       propertyPath: m_Enabled
@@ -1427,7 +1457,7 @@ GameObject:
   - component: {fileID: 438830507}
   - component: {fileID: 438830506}
   - component: {fileID: 438830505}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (31)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1594,6 +1624,16 @@ PrefabInstance:
       propertyPath: goalName
       value: Admire the Desigener Fireplace
       objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: attractiveObjGain
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: repulsiveObjGain
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6042406952717429881, guid: 041b60be9592344f8945e909f8a3a315,
         type: 3}
       propertyPath: m_Enabled
@@ -1619,7 +1659,7 @@ GameObject:
   - component: {fileID: 503803363}
   - component: {fileID: 503803362}
   - component: {fileID: 503803361}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (34)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1711,7 +1751,7 @@ GameObject:
   - component: {fileID: 510668263}
   - component: {fileID: 510668262}
   - component: {fileID: 510668261}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1803,7 +1843,7 @@ GameObject:
   - component: {fileID: 516726485}
   - component: {fileID: 516726484}
   - component: {fileID: 516726483}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (32)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1895,7 +1935,7 @@ GameObject:
   - component: {fileID: 564532248}
   - component: {fileID: 564532247}
   - component: {fileID: 564532246}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2056,7 +2096,7 @@ GameObject:
   - component: {fileID: 648688795}
   - component: {fileID: 648688794}
   - component: {fileID: 648688793}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2217,7 +2257,7 @@ GameObject:
   - component: {fileID: 696240943}
   - component: {fileID: 696240942}
   - component: {fileID: 696240941}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (33)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2475,6 +2515,16 @@ PrefabInstance:
       propertyPath: goalName
       value: Play Smash
       objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: attractiveObjGain
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: repulsiveObjGain
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6042406952717429881, guid: 041b60be9592344f8945e909f8a3a315,
         type: 3}
       propertyPath: m_Enabled
@@ -2597,7 +2647,7 @@ GameObject:
   - component: {fileID: 756243487}
   - component: {fileID: 756243486}
   - component: {fileID: 756243485}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (40)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2689,7 +2739,7 @@ GameObject:
   - component: {fileID: 792751967}
   - component: {fileID: 792751966}
   - component: {fileID: 792751965}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2781,7 +2831,7 @@ GameObject:
   - component: {fileID: 833658991}
   - component: {fileID: 833658990}
   - component: {fileID: 833658989}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2873,7 +2923,7 @@ GameObject:
   - component: {fileID: 845780295}
   - component: {fileID: 845780294}
   - component: {fileID: 845780293}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2965,7 +3015,7 @@ GameObject:
   - component: {fileID: 889984257}
   - component: {fileID: 889984256}
   - component: {fileID: 889984255}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3132,6 +3182,16 @@ PrefabInstance:
       propertyPath: goalName
       value: Quarterly Planning
       objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: attractiveObjGain
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: repulsiveObjGain
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6042406952717429881, guid: 041b60be9592344f8945e909f8a3a315,
         type: 3}
       propertyPath: m_Enabled
@@ -3157,7 +3217,7 @@ GameObject:
   - component: {fileID: 956863919}
   - component: {fileID: 956863918}
   - component: {fileID: 956863917}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3319,6 +3379,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 9.408
       objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: attractiveObjGain
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: repulsiveObjGain
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6042406952717429881, guid: 041b60be9592344f8945e909f8a3a315,
         type: 3}
       propertyPath: m_Enabled
@@ -3344,7 +3414,7 @@ GameObject:
   - component: {fileID: 997839498}
   - component: {fileID: 997839497}
   - component: {fileID: 997839496}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (47)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3577,6 +3647,16 @@ PrefabInstance:
       propertyPath: goalName
       value: Dinner
       objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: attractiveObjGain
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: repulsiveObjGain
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6042406952717429881, guid: 041b60be9592344f8945e909f8a3a315,
         type: 3}
       propertyPath: m_Enabled
@@ -3602,7 +3682,7 @@ GameObject:
   - component: {fileID: 1008987062}
   - component: {fileID: 1008987061}
   - component: {fileID: 1008987060}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (37)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3768,6 +3848,16 @@ PrefabInstance:
         type: 3}
       propertyPath: goalName
       value: Small Sauna
+      objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: attractiveObjGain
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: repulsiveObjGain
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6042406952717429881, guid: 041b60be9592344f8945e909f8a3a315,
         type: 3}
@@ -4007,6 +4097,16 @@ PrefabInstance:
       propertyPath: goalName
       value: Enjoy the View of Tuomiokirkko
       objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: attractiveObjGain
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: repulsiveObjGain
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6042406952717429881, guid: 041b60be9592344f8945e909f8a3a315,
         type: 3}
       propertyPath: m_Enabled
@@ -4032,7 +4132,7 @@ GameObject:
   - component: {fileID: 1294761439}
   - component: {fileID: 1294761438}
   - component: {fileID: 1294761437}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4124,7 +4224,7 @@ GameObject:
   - component: {fileID: 1346895005}
   - component: {fileID: 1346895004}
   - component: {fileID: 1346895003}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4216,7 +4316,7 @@ GameObject:
   - component: {fileID: 1359362729}
   - component: {fileID: 1359362728}
   - component: {fileID: 1359362727}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4308,7 +4408,7 @@ GameObject:
   - component: {fileID: 1388505051}
   - component: {fileID: 1388505050}
   - component: {fileID: 1388505049}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4400,7 +4500,7 @@ GameObject:
   - component: {fileID: 1409123381}
   - component: {fileID: 1409123380}
   - component: {fileID: 1409123379}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4492,7 +4592,7 @@ GameObject:
   - component: {fileID: 1420156429}
   - component: {fileID: 1420156428}
   - component: {fileID: 1420156427}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (35)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4658,6 +4758,16 @@ PrefabInstance:
         type: 3}
       propertyPath: goalName
       value: Daily
+      objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: attractiveObjGain
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: repulsiveObjGain
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6042406952717429881, guid: 041b60be9592344f8945e909f8a3a315,
         type: 3}
@@ -4828,6 +4938,16 @@ PrefabInstance:
       propertyPath: goalName
       value: Relax at Green Room
       objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: attractiveObjGain
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: repulsiveObjGain
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6042406952717429881, guid: 041b60be9592344f8945e909f8a3a315,
         type: 3}
       propertyPath: m_Enabled
@@ -4853,7 +4973,7 @@ GameObject:
   - component: {fileID: 1455379587}
   - component: {fileID: 1455379586}
   - component: {fileID: 1455379585}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5014,7 +5134,7 @@ GameObject:
   - component: {fileID: 1474862023}
   - component: {fileID: 1474862022}
   - component: {fileID: 1474862021}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5106,7 +5226,7 @@ GameObject:
   - component: {fileID: 1484733496}
   - component: {fileID: 1484733495}
   - component: {fileID: 1484733494}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5198,7 +5318,7 @@ GameObject:
   - component: {fileID: 1486114429}
   - component: {fileID: 1486114428}
   - component: {fileID: 1486114427}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5368,7 +5488,7 @@ GameObject:
   - component: {fileID: 1521182286}
   - component: {fileID: 1521182285}
   - component: {fileID: 1521182284}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5460,7 +5580,7 @@ GameObject:
   - component: {fileID: 1524010999}
   - component: {fileID: 1524010998}
   - component: {fileID: 1524010997}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5552,7 +5672,7 @@ GameObject:
   - component: {fileID: 1581165539}
   - component: {fileID: 1581165538}
   - component: {fileID: 1581165537}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (45)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5713,7 +5833,7 @@ GameObject:
   - component: {fileID: 1680174318}
   - component: {fileID: 1680174317}
   - component: {fileID: 1680174316}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5874,7 +5994,7 @@ GameObject:
   - component: {fileID: 1793921808}
   - component: {fileID: 1793921807}
   - component: {fileID: 1793921806}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (38)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5966,7 +6086,7 @@ GameObject:
   - component: {fileID: 1808196141}
   - component: {fileID: 1808196140}
   - component: {fileID: 1808196139}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6133,6 +6253,16 @@ PrefabInstance:
       propertyPath: goalName
       value: Small Sauna
       objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: attractiveObjGain
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: repulsiveObjGain
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6042406952717429881, guid: 041b60be9592344f8945e909f8a3a315,
         type: 3}
       propertyPath: m_Enabled
@@ -6227,6 +6357,16 @@ PrefabInstance:
       propertyPath: goalName
       value: Drink Wine at Balcony
       objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: attractiveObjGain
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: repulsiveObjGain
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6042406952717429881, guid: 041b60be9592344f8945e909f8a3a315,
         type: 3}
       propertyPath: m_Enabled
@@ -6252,7 +6392,7 @@ GameObject:
   - component: {fileID: 1871618179}
   - component: {fileID: 1871618178}
   - component: {fileID: 1871618177}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (44)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6413,7 +6553,7 @@ GameObject:
   - component: {fileID: 1966552402}
   - component: {fileID: 1966552401}
   - component: {fileID: 1966552400}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6580,6 +6720,16 @@ PrefabInstance:
       propertyPath: goalName
       value: Stakeholder Meeting
       objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: attractiveObjGain
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: repulsiveObjGain
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6042406952717429881, guid: 041b60be9592344f8945e909f8a3a315,
         type: 3}
       propertyPath: m_Enabled
@@ -6605,7 +6755,7 @@ GameObject:
   - component: {fileID: 1984385699}
   - component: {fileID: 1984385698}
   - component: {fileID: 1984385697}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (36)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6772,6 +6922,16 @@ PrefabInstance:
       propertyPath: goalName
       value: BBQ
       objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: attractiveObjGain
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -5043436143495949737, guid: 041b60be9592344f8945e909f8a3a315,
+        type: 3}
+      propertyPath: repulsiveObjGain
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6042406952717429881, guid: 041b60be9592344f8945e909f8a3a315,
         type: 3}
       propertyPath: m_Enabled
@@ -6889,7 +7049,7 @@ GameObject:
   - component: {fileID: 2035002981}
   - component: {fileID: 2035002980}
   - component: {fileID: 2035002979}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6981,7 +7141,7 @@ GameObject:
   - component: {fileID: 2040954444}
   - component: {fileID: 2040954443}
   - component: {fileID: 2040954442}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7073,7 +7233,7 @@ GameObject:
   - component: {fileID: 2070389894}
   - component: {fileID: 2070389893}
   - component: {fileID: 2070389892}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (42)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7211,7 +7371,7 @@ GameObject:
   - component: {fileID: 2112028758}
   - component: {fileID: 2112028757}
   - component: {fileID: 2112028756}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

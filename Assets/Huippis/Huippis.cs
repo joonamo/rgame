@@ -10,6 +10,8 @@ public class Huippis : MonoBehaviour
     public float rotateSpeed = 10.0f;
     public float speed = 3.0f;
 
+    protected int sightRayMask = 1 << 11;
+
     protected CharacterController charController;
 
     // Start is called before the first frame update
@@ -20,7 +22,7 @@ public class Huippis : MonoBehaviour
 
         charController = GetComponent<CharacterController>();
         gameManager = FindObjectOfType<GameManager>();
-        currentDirection = transform.forward;
+        currentDirection = new Vector3(Random.Range(-1, 1), 0, Random.Range(-1, 1)).normalized;
     }
 
     // Update is called once per frame
@@ -30,16 +32,21 @@ public class Huippis : MonoBehaviour
         foreach (POI poi in gameManager.POIs)
         {
             Vector3 diff = poi.transform.position - transform.position;
-            if (diff.magnitude < poi.range)
+
+            if (poi.gameObject != gameObject && diff.magnitude < poi.range &&
+                !Physics.Raycast(
+                    transform.position, diff.normalized, diff.magnitude, sightRayMask))
             {
                 float decay = 1.0f - Mathf.Pow((diff.magnitude / poi.range), poi.exponent);
                 flockDirection += diff.normalized * poi.attract * decay;
                 flockDirection += poi.transform.forward * poi.directionMatch * decay;
             }
         }
-        currentDirection = Vector3.Slerp(currentDirection, flockDirection, rotateSpeed * Time.deltaTime);
-        currentDirection.y = 0;
-        currentDirection.Normalize();
+        if (flockDirection.magnitude > 0) {
+            currentDirection = Vector3.Slerp(currentDirection, flockDirection, rotateSpeed * Time.deltaTime);
+            currentDirection.y = 0;
+            currentDirection.Normalize();
+        }
 
         charController.SimpleMove(currentDirection * speed);
     }
