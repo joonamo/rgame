@@ -91,7 +91,6 @@ public class HuippisGoal : MonoBehaviour
         active = false;
         myCollider.enabled = false;
         myPOI.attract = 0.0f;
-        Debug.Log("Deactivated");
         foreach (var r in myRenderers)
         {
             r.enabled = false;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public List<POI> POIs = new List<POI>();
-    public List<HuippisGoal> route;
+    public List<HuippisGoal> goals;
 
     public int score = 0;
     public int multiplier = 1;
@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     private bool firstFrame = true;
     private bool gameOver;
     private float startTime;
+    private int currentGoalIdx;
 
     // Start is called before the first frame update
     void Start()
@@ -33,18 +34,12 @@ public class GameManager : MonoBehaviour
 
         startTime = Time.time;
 
-        var goals = new List<HuippisGoal>(FindObjectsOfType<HuippisGoal>());
-        while (goals.Count > 0 && route.Count < 5) {
-            int index = Random.Range(0, goals.Count);
-            route.Add(goals[index]);
-            goals.RemoveAt(index);
-        }
-
-        route[0].Activate();
+        goals = new List<HuippisGoal>(FindObjectsOfType<HuippisGoal>());
+        ActivateRandomNext();
     }
 
     public HuippisGoal GetCurrentGoal() {
-        return route.Count > 0 ? route[0] : null ;
+        return goals[currentGoalIdx];
     }
 
     public void addScore() {
@@ -52,23 +47,22 @@ public class GameManager : MonoBehaviour
     }
 
     public void GoalCompleted() {
-        route[0].Deactivate();
-        route.RemoveAt(0);
         multiplier = score;
-        if (route.Count > 0) {
-            route[0].Activate();
-        }
-        else
-        {
-            gameOver = true;
-        }
+        ActivateRandomNext();
+    }
+
+    void ActivateRandomNext()
+    {
+        GetCurrentGoal().Deactivate();
+        int index = Random.Range(0, goals.Count);
+        currentGoalIdx = index;
+        goals[currentGoalIdx].Activate();
     }
 
     // Update is called once per frame
     void Update()
     {
         if (firstFrame) {
-            route[0].Activate();
             firstFrame = false;
         }
 
