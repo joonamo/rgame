@@ -21,6 +21,8 @@ public class HuippisGoal : MonoBehaviour
     public string goalName = "Sauna";
     private TMPro.TextMeshPro titleMesh;
 
+	protected bool playerIn = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,18 +42,25 @@ public class HuippisGoal : MonoBehaviour
         Deactivate();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (
-            gameManager.GetGameState() == GameState.STARTED &&
-            !active &&
-            gameManager.GetCurrentGoal() &&
-            gameManager.GetCurrentGoal().GetInstanceID() == this.GetInstanceID()
-        )
-        {
-            Activate();
-        }
+	// Update is called once per frame
+	void Update()
+	{
+		if (
+			gameManager.GetGameState() == GameState.STARTED &&
+			!active &&
+			gameManager.GetCurrentGoal() &&
+			gameManager.GetCurrentGoal().GetInstanceID() == this.GetInstanceID()
+		)
+		{
+			Activate();
+		}
+
+		if (active) {
+		    var targetTitle = playerIn ? "Press Activate" : goalName;
+		    if (targetTitle != titleMesh.text) {
+				titleMesh.text = targetTitle;
+		    }
+	    }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -72,14 +81,27 @@ public class HuippisGoal : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Player" && Input.GetButtonDown("Jump"))
+        if (other.tag == "Player")
         {
-            CompleteGoal();
-            RechargeSupplies(other.GetComponent<Player>());
-        }
+			playerIn = true;
+
+			if (Input.GetButtonDown("Jump"))
+			{
+				CompleteGoal();
+				RechargeSupplies(other.GetComponent<Player>());
+			}
+		}
     }
 
-    public void Activate() {
+	private void OnTriggerExit(Collider other) {
+
+		if (other.tag == "Player") {
+			playerIn = false;
+		}
+	}
+
+
+	public void Activate() {
         Debug.Log("Activated");
         active = true;
         myCollider.enabled = true;
