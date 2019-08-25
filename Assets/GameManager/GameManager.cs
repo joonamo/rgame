@@ -117,16 +117,23 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0.0f;
 
         var highScore = PlayerPrefs.GetFloat("HighScore", 0);
-        if (highScore < score)
+        if (score > highScore)
         {
             PlayerPrefs.SetFloat("HighScore", score);
+            winText.text = string.Format(
+                "New high score!!!\nThe new high score is: {0}\n\n Press Activate to start again",
+                score
+            );
         }
-
-        winText.text = string.Format(
+        else
+        {
+            winText.text = string.Format(
                 "Game over!\nYour score: {0}\nHigh score: {1}\n\n Press Activate to start again",
                 score,
                 highScore
             );
+        }
+        
         statusText.enabled = false;
         winText.enabled = true;
     }
