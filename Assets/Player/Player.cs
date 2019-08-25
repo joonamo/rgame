@@ -56,7 +56,10 @@ public class Player : MonoBehaviour
         Vector3 right = CamTran.right;
         right.y = 0;
         right.Normalize();
-        Vector3 InputV = Input.GetAxis("Horizontal") * right + Input.GetAxis("Vertical") * forward;
+        Vector3 InputV =
+            gameManager.GetGameState() == GameState.STARTED
+                ? Input.GetAxis("Horizontal") * right + Input.GetAxis("Vertical") * forward
+                : Vector3.zero;
         if (InputV.magnitude > 0.1f)
         {
             if (currentSpeed > 0.0f)
@@ -74,7 +77,7 @@ public class Player : MonoBehaviour
             currentSpeed = Mathf.Max(currentSpeed - decel * Time.deltaTime, 0.0f);
         }
 
-        if (currentSpeed > 0.0f)
+        if (currentSpeed > -1.0f)
         {
             charController.SimpleMove(lastInput * currentSpeed);
             if (myPOI != null)
