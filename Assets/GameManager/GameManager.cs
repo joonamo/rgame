@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
         }
 
         statusText.text = string.Format(
-                "Next Activity: {0}\nScore: {1}\nMultiplier: {2}\nKarhu: {3}\nKulta Katriina: {4}",
+                "Next Activity: {0}\nScore: {1}\nMultiplier: {2}\nBear Beer: {3}\nParty Coffee: {4}",
                 GetCurrentGoal().goalName,
                 score,
                 multiplier,
