@@ -89,6 +89,7 @@ public class Player : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         float enter = 0.0f;
 
+        Debug.Log(Input.GetAxis("AimHorizontal"));
         Vector3 AimV = Vector3.zero;
         if (swapRightAxis)
         {

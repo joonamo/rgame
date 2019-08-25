@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/TutorialComic.unity
+    guid: 76e00373f88e34de09ea4b7f3dc475d2
+  - enabled: 1
+    path: Assets/jhlevel.unity
+    guid: 05574aca604bf4334960a64b8886401e
   m_configObjects: {}
