@@ -94,22 +94,10 @@ public class GameManager : MonoBehaviour
 
         if (GetRemainingTime() <= 0)
         {
-            gameState = GameState.COMPLETED;
-            Time.timeScale = 0.0f;
+            HandleGameOver();
         }
 
-        if (gameState == GameState.COMPLETED)
-        {
-            winText.text = string.Format(
-                "Game over!\nYour score: {0}\n\n Press Activate to start again",
-                score
-            );
-            statusText.enabled = false;
-            winText.enabled = true;
-        }
-        else
-        {
-            statusText.text = string.Format(
+        statusText.text = string.Format(
                 "Next Activity: {0}\nScore: {1}\nMultiplier: {2}\nKarhu: {3}\nKulta Katriina: {4}",
                 GetCurrentGoal().goalName,
                 score,
@@ -117,11 +105,30 @@ public class GameManager : MonoBehaviour
                 player.getAttractiveObjCount(),
                 player.getRepulsiveObjCount()
             );
-            timerText.text = GetRemainingTime().ToString("0.00");
-        }
+        timerText.text = GetRemainingTime().ToString("0.00");
 
         float timeSinceNewGoal = Time.fixedUnscaledTime - goalStartTime;
         nextGoalText.enabled = timeSinceNewGoal < 5.0f && ((timeSinceNewGoal % 0.2f) < 0.1f);
+    }
+
+    private void HandleGameOver()
+    {
+        gameState = GameState.COMPLETED;
+        Time.timeScale = 0.0f;
+
+        var highScore = PlayerPrefs.GetFloat("HighScore", 0);
+        if (highScore < score)
+        {
+            PlayerPrefs.SetFloat("HighScore", score);
+        }
+
+        winText.text = string.Format(
+                "Game over!\nYour score: {0}\nHigh score: {1}\n\n Press Activate to start again",
+                score,
+                highScore
+            );
+        statusText.enabled = false;
+        winText.enabled = true;
     }
 
     private void HandleInput()
