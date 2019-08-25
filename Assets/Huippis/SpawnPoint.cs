@@ -19,6 +19,8 @@ public class SpawnPoint : MonoBehaviour
 
     private TMPro.TextMeshPro titleMesh;
     private LoadingIndicator loadingIndicator;
+
+    private bool hasStarted = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +44,11 @@ public class SpawnPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!hasStarted && gameManager.GetGameState() == GameState.STARTED) {
+            hasStarted = true;
+            SpawnHuippi();
+        }
+
         HandleInput();
 
         if (IsLoading()) {
