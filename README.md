@@ -2,7 +2,7 @@
 
 The game was developed during Reaktor Gamejam 2019
 
-[**Demo**](http://joonamo.kapsi.fi/huippis)
+[**Play now in browser!**](https://joonamo.github.io/rgame/)
 
 ## Overview
 
