@@ -155,6 +155,9 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             Time.timeScale = 1.0f;
         }
+        else if (Input.GetButtonDown("Jump")) {
+            ScreenCapture.CaptureScreenshot(string.Format("huippis{0}.jpg", Time.unscaledTime));
+        }
     }
 
     private float GetRemainingTime()
